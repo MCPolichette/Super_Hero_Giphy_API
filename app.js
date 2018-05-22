@@ -17,7 +17,7 @@ function buttonDisplay() {
         console.log("it works?");
         $("#pics_here").empty();
         var imageType = $(this).text();
-        var queryURL = ("http://api.giphy.com/v1/gifs/search?q=" + imageType + "&api_key=xVCRIEMVtbSqDKSYUxx4bcB8UetYmDx2&limit=" + numberOfImages + "&rating=g")
+        var queryURL = ("https://api.giphy.com/v1/gifs/search?q=" + imageType + "&api_key=xVCRIEMVtbSqDKSYUxx4bcB8UetYmDx2&limit=" + numberOfImages + "&rating=g")
         // Place holder for other filters:  -   
         $.ajax({
             url: queryURL,
