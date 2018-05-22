@@ -5,7 +5,10 @@
     margin:5px;
     font-family: 'IBM Plex Sans', sans-serif;
 
-};
+}
+p{
+font-family: 'IBM Plex Sans', sans-serif;
+}
 #pics_here {
     display: inline-block;
     font-family: 'IBM Plex Sans', sans-serif;
