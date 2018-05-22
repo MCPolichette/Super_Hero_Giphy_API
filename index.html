@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <html lang="en">
+    <title>Cute Animal Gifs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="reset.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- title -->
+    <div class="jumbotron">
+        <h1>Cute Animals</h1>
+        <p>click buttons to do a new search, or use form to search for something new!</p>
+    </div>
+    <div class="container">
+        <div class="row">
+            <!-- button columns to break down when in mobile form -->
+            <div class="col-xs-12 col-sm-12" id="buttonColumn1">
+                <button type="button" class="pic-button btn btn-dark btn-lg">full word</button>
+                <button type="button" class="pic-button btn btn-dark btn-lg">full word</button>
+            </div>
+            <!-- <div class="col-xs-6 col-sm-4" id="buttonColumn2">
+                <button type="button" class="pic-button btn btn-dark btn-lg">full word</button>
+                <button type="button" class="pic-button btn btn-dark btn-lg">full word</button>
+            </div>
+            <div class="col-xs-6 col-sm-4" id="buttonColumn3">
+                <button type="button" class="pic-button btn btn-dark btn-lg">full word</button>
+                <button type="button" class="pic-button btn btn-dark btn-lg">full word</button>
+                <button type="button" class="pic-button btn btn-dark btn-lg">full word</button>
+
+            </div> -->
+        </div>
+        <div class="row">
+            <!-- form input -->
+            <form class="form-inline" action="/action_page.php">
+                <div class="form-group">
+                    <label for="new_search">Create New Button:</label>
+                    <input type="text" id="new_search">
+                </div>
+                <button type="submit" class="btn btn-default" id="add_button">Search</button>
+            </form>
+        </div>
+        <div id="pics_here">
+
+        </div>
+        <!-- content div  ideally a way to stack the images cleanly, and neat -->
+    </div>
+    <!-- direct footer. -->
+
+
+    <script src="app.js"></script>
+</body>
+
+</html>
