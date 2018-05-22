@@ -1,0 +1,15 @@
+.pic-button{
+    margin:5px;
+
+};
+#pics_here {
+display: inline-block;
+
+}
+.pic_view {
+    display: inline-block;
+    /* width: 250px;
+    height: 100%; */
+    margin: 10px;
+    border: 3px solid black;  
+}
