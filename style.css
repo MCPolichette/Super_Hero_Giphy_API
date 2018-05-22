@@ -1,15 +1,20 @@
-.pic-button{
+.jumbotron{
+    font-family: 'Gravitas One', cursive;
+}
+.btn{
     margin:5px;
+    font-family: 'IBM Plex Sans', sans-serif;
 
 };
 #pics_here {
-display: inline-block;
+    display: inline-block;
+    font-family: 'IBM Plex Sans', sans-serif;
 
 }
 .pic_view {
     display: inline-block;
     /* width: 250px;
     height: 100%; */
-    margin: 10px;
+    margin: 5px;
     border: 3px solid black;  
 }

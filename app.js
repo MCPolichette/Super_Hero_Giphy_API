@@ -14,16 +14,33 @@ function buttonDisplay() {
     }
 }
 
-buttonDisplay();
+$(document).ready(function webLoad() {
+    buttonDisplay();
+    $("#add_button").on("click", function (event) {
 
-$(document).ready(function () {
+        console.log(gifArray)
+        // function that adds button to array, and re-renders the buttons with new button in addition to it
+
+        // Write code to grab the text the user types into the input field
+        var userInput = $("#new_search").val();
+
+        event.preventDefault();
+        gifArray.push(userInput);
+        // The renderButtons function is called, rendering the list of movie buttons
+        console.log(gifArray);
+
+        $(".form-inline")[0].reset();
+        buttonDisplay();
+        webLoad();
+    });
 
     $(".pic-button").on("click", function (event) {
-        console.log("it works?")
+
+        console.log("it works?");
         $("#pics_here").empty();
 
         var imageType = $(this).text();
-        var queryURL = ("http://api.giphy.com/v1/gifs/search?q=" + imageType + "&api_key=xVCRIEMVtbSqDKSYUxx4bcB8UetYmDx2&limit=" + numberOfImages)
+        var queryURL = ("http://api.giphy.com/v1/gifs/search?q=" + imageType + "&api_key=xVCRIEMVtbSqDKSYUxx4bcB8UetYmDx2&limit=" + numberOfImages + "&rating=g")
 
         $.ajax({
             url: queryURL,
@@ -46,26 +63,22 @@ $(document).ready(function () {
                 $(picDiv).append(animalImage);
                 $("#pics_here").append(picDiv);
             }
+
+            $(".gif").on("click", function () {
+                // switches state of still or moving gif
+                var state = $(this).attr("data-state");
+                console.log(this);
+                if (state === "still") {
+                    $(this).attr("src", $(this).attr("data-move"))
+                    $(this).attr("data-state", "moving")
+                } else if (state === "moving") {
+                    $(this).attr("src", $(this).attr("data-still"))
+                    $(this).attr("data-state", "still")
+                }
+
+            })
         });
     })
 
-    $("#add_button").on("click", function (event) {
-        console.log(gifArray)
-        // function that adds button to array, and re-renders the buttons with new button in addition to it
-        event.preventDefault();
-        // Write code to grab the text the user types into the input field
-        var userInput = $("#new_search").val();
-        gifArray.push(userInput);
-        // The renderButtons function is called, rendering the list of movie buttons
-        console.log(gifArray)
-        buttonDisplay();
-    });
-    // $(".gif").on("click", function () {
-    //     console.log("test");
-    // });
-    $(".pic_view").on("click", function () {
 
-        // var state = $(this).attr("data-state")
-        console.log("state")
-    })
 })

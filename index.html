@@ -11,18 +11,20 @@
         crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Gravitas+One|IBM+Plex+Sans:700" rel="stylesheet">
+
 </head>
 
 <body>
     <!-- title -->
-    <div class="jumbotron">
+    <div class="jumbotron text-center">
         <h1>Cute Animals</h1>
         <p>click buttons to do a new search, or use form to search for something new!</p>
     </div>
     <div class="container">
         <div class="row">
             <!-- button columns to break down when in mobile form -->
-            <div class="col-xs-12 col-sm-12" id="buttonColumn1">
+            <div class="col-xs-12 col-sm-12 text-center" id="buttonColumn1">
                 <button type="button" class="pic-button btn btn-dark btn-lg">full word</button>
                 <button type="button" class="pic-button btn btn-dark btn-lg">full word</button>
             </div>
@@ -37,14 +39,14 @@
 
             </div> -->
         </div>
-        <div class="row">
+        <div class="row text-center">
             <!-- form input -->
             <form class="form-inline" action="/action_page.php">
                 <div class="form-group">
                     <label for="new_search">Create New Button:</label>
                     <input type="text" id="new_search">
                 </div>
-                <button type="submit" class="btn btn-default" id="add_button">Search</button>
+                <button type="submit" class="btn btn-dark btn-sm" id="add_button">Search</button>
             </form>
         </div>
         <div id="pics_here">
