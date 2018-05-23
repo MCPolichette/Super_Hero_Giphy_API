@@ -4,7 +4,7 @@ var gifArray = ["cats", "kittens", "dogs", "calfs", "birds", "muppets",
     "sea turtles", "awww", "rabbit", "hamster", "sugar glider", "frog", "gerbil",
     "pygmy goat", "chicken"];
 // other global variables:
-var numberOfImages = 10;
+var numberOfImages = 12;
 
 // CURRENT WORKING BUTTON DISPLAY
 function buttonDisplay() {
@@ -17,7 +17,7 @@ function buttonDisplay() {
         console.log("it works?");
         $("#pics_here").empty();
         var imageType = $(this).text();
-        var queryURL = ("https://api.giphy.com/v1/gifs/search?q=" + imageType + "&api_key=xVCRIEMVtbSqDKSYUxx4bcB8UetYmDx2&limit=" + numberOfImages + "&rating=g")
+        var queryURL = ("http://api.giphy.com/v1/gifs/search?q=" + imageType + "&api_key=xVCRIEMVtbSqDKSYUxx4bcB8UetYmDx2&limit=" + numberOfImages + "&rating=g")
         // Place holder for other filters:  -   
         $.ajax({
             url: queryURL,
@@ -53,7 +53,6 @@ function buttonDisplay() {
                     $(this).attr("src", $(this).attr("data-still"))
                     $(this).attr("data-state", "still")
                 }
-
             })
         });
     })
