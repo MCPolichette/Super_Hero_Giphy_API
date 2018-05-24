@@ -1,18 +1,29 @@
+body{
+    background-color: gray;
+}
 .jumbotron{
-    font-family: 'Gravitas One', cursive;
+    background-image: url(images/superheroBackdrop.jpg);
+    background-size: cover;
+    font-family: 'Faster One', cursive;
+    color: white;
+    }
+
+.container{
+    background-color: rgb(199, 194, 194);
+}
+h1{
+    font-size: 30px;
 }
 .btn{
     margin:5px;
-    font-family: 'IBM Plex Sans', sans-serif;
-
+    font-family: 'Acme', sans-serif;
 }
 p{
-font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'Permanent Marker', cursive;
 }
 #pics_here {
     display: inline-block;
-    font-family: 'IBM Plex Sans', sans-serif;
-
+     font-family: 'Permanent Marker', cursive;
 }
 .pic_view {
     display: inline-block;
@@ -20,4 +31,8 @@ font-family: 'IBM Plex Sans', sans-serif;
     height: 100%; */
     margin: 5px;
     border: 3px solid black;  
+}
+input{
+    width:150px;
+    margin-top: 5px;
 }
