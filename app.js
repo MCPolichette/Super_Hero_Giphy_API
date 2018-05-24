@@ -17,7 +17,7 @@ function buttonDisplay() {
         console.log("it works?");
         $("#pics_here").empty();
         var imageType = $(this).text();
-        var queryURL = ("http://api.giphy.com/v1/gifs/search?q=" + imageType + "&api_key=xVCRIEMVtbSqDKSYUxx4bcB8UetYmDx2&limit=" + numberOfImages + "&rating=g")
+        var queryURL = ("http://api.giphy.com/v1/gifs/search?q=" + imageType + "&api_key=xVCRIEMVtbSqDKSYUxx4bcB8UetYmDx2&limit=" + numberOfImages + "&rating=pg")
         // Place holder for other filters:  -   
         $.ajax({
             url: queryURL,
@@ -36,6 +36,7 @@ function buttonDisplay() {
                 animalImage.attr("data-move", results[i].images.fixed_height_small.url);
                 animalImage.attr("data-state", "still");
                 animalImage.attr("class", "gif");
+                animalImage.attr("data-id", results.id);
                 $(picDiv).append(rating);
                 $(picDiv).append(animalImage);
                 // appending newly made div to the Html page, and going to next one.
@@ -58,7 +59,7 @@ function buttonDisplay() {
     })
 }
 
-$(document).ready(function webLoad() {
+$(document).ready(function () {
     buttonDisplay();
     $("#add_button").on("click", function (event) {
         console.log(gifArray)
