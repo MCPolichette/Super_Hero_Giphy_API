@@ -3,7 +3,7 @@
 
 <head>
     <html lang="en">
-    <title>Cute Animal Gifs</title>
+    <title>Super Hero Gifs</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="reset.css" />
@@ -20,7 +20,6 @@
     <div class="jumbotron text-center">
         <h1>Super Hero Gifs</h1>
         <p>Click the buttons to see your favorite superhero, or add a new one by searching below.</p>
-
     </div>
     <div class="container">
         <div class="row">
@@ -29,18 +28,17 @@
                 <button type="button" class="pic-button btn btn-dark btn-lg">full word</button>
                 <button type="button" class="pic-button btn btn-dark btn-lg">full word</button>
             </div>
-
         </div>
-        <div class="row text-center">
-            <!-- form input -->
-            <form class="form-inline" action="/action_page.php">
-                <div class="form-group">
-                    <label for="new_search">Create New Button:</label>
-                    <input type="text" id="new_search">
-                </div>
-                <button type="submit" class="btn btn-dark" id="add_button">Search</button>
+        <nav class="navbar navbar-light bg-light justify-content-between">
+            <!-- <a class="navbar-brand">Navbar</a> -->
+            <button type="button" id="favorite" class="btn btn-warning btn-sm">Favorites</button>
+            <form class="form-inline">
+                <label for="new_search">Create a New Button:</label>
+                <input class="form-control mr-sm-2" id="new_search" type="search" placeholder="SuperHero" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="add_button">Search</button>
             </form>
-        </div>
+        </nav>
+
         <div id="pics_here">
 
         </div>

@@ -14,7 +14,11 @@ body{
 h1{
     font-size: 30px;
 }
-.btn{
+.favButton, .rating{
+    position :relative;  
+    display: inline-block;  
+}
+.btn, label{
     margin:5px;
     font-family: 'Acme', sans-serif;
 }
@@ -22,17 +26,27 @@ p{
     font-family: 'Permanent Marker', cursive;
 }
 #pics_here {
+    margin:5px;
     display: inline-block;
      font-family: 'Permanent Marker', cursive;
 }
 .pic_view {
+    
     display: inline-block;
     /* width: 250px;
     height: 100%; */
-    margin: 5px;
+    margin: 15px;
+    float: none; 
+    margin: 0 auto;
     border: 3px solid black;  
 }
 input{
     width:150px;
     margin-top: 5px;
+}
+img{
+    position: relative;
+}
+nav{
+    text-align: center;
 }
