@@ -1,25 +1,25 @@
-// Api Key: xVCRIEMVtbSqDKSYUxx4bcB8UetYmDx2
-// have 5 or six buttons ready to go, and a dropdown for total pictures wanted 
+var api_key = "xVCRIEMVtbSqDKSYUxx4bcB8UetYmDx2";
+// have several buttons ready to go, and a dropdown for total pictures wanted 
 var gifArray = ["Superman", "Batman", "Dr Strange", "Aquaman", "Mr Incredible", "Captain America",
     "Spiderman", "Avengers", "Antman", "Wonderwoman", "Batgirl", "Justice League", "Marvel",
     "DC comics", "X-men", "wolverine", "Ironman", "Hulk", "Thor"];
 // other global variables:
 var numberOfImages = 12;
-var favArray = [localStorage.getItem("favoriteHeros")]
-// localStorage.getItem()
+var favArray = [localStorage.getItem("favoriteHeros")];
+// localStorage.getItem()  
 
 // CURRENT WORKING BUTTON DISPLAY
 function buttonDisplay() {
     $("#buttonColumn1").empty()
     for (i = 0; i < gifArray.length; i++) {
-        $("#buttonColumn1").append("<button type='button'  class='pic-button btn btn-success btn-sm'>" + gifArray[i] + " </button>")
+        $("#buttonColumn1").append("<button type='button'  class='pic-button btn btn-warning btn-sm'>" + gifArray[i] + " </button>")
     }
     // Function for pulling up pictures based on button clicked
     $(".pic-button").on("click", function (event) {
         console.log("it works?");
         $("#pics_here").empty();
         var imageType = $(this).text();
-        var queryURL = ("http://api.giphy.com/v1/gifs/search?q=" + imageType + "&api_key=xVCRIEMVtbSqDKSYUxx4bcB8UetYmDx2&limit=" + numberOfImages + "&rating=pg")
+        var queryURL = ("http://api.giphy.com/v1/gifs/search?q=" + imageType + "&api_key=" + api_key + "&limit=" + numberOfImages + "&rating=pg")
         // Place holder for other filters:  -   
         $.ajax({
             url: queryURL,
@@ -40,7 +40,7 @@ function buttonDisplay() {
                 animalImage.attr("data-move", results[i].images.fixed_height_small.url);
                 animalImage.attr("data-state", "still");
                 animalImage.attr("class", "gif");
-                favButton.val(results[i].id);
+                favButton.val(i);
                 $(infoDiv).append(favButton);
                 $(infoDiv).append(rating);
                 $(picDiv).append(animalImage);
@@ -62,17 +62,22 @@ function buttonDisplay() {
                     $(this).attr("data-state", "still")
                 }
 
-            })
+            });
+
+
             $(".favButton").on("click", function () {
-                var newFav = $(this).attr("value")
-                favArray.push(newFav);
+                console.log(results);
+                var newFav = $(this).attr("value");
+                console.log(results[newFav]);
+                favArray.push(results[newFav]);
+                console.log(favArray);
+                localStorage.setItem("favoriteHeros", JSON.stringify(favArray));
 
-
-                localStorage.setItem("favoriteHeros", favArray);
-            })
+            });
         });
     })
 }
+
 
 $(document).ready(function () {
 
@@ -89,4 +94,52 @@ $(document).ready(function () {
         $(".form-inline")[0].reset();
         buttonDisplay();
     });
-})
+    $("#favorite").on("click", function () {
+        $("#pics_here").empty();
+        console.log(favArray);
+        console.log("Favorites has been clicked")
+        for (i = 1; i < favArray.length; i++) {
+            console.log(favArray[i]);
+            // creating a new div to put in layout and appending the rating and images to it
+            var picDiv = $("<div class = ' pic_view'>");
+            var infoDiv = $("<div class = 'info'>")
+            var rating = $("<p class = 'rating'> Rating: " + favArray[i].rating + "</p>");
+            var animalImage = $("<img class ='gif'>");
+            var favStatement = $("<p>Favorite</p>")
+            animalImage.attr("alt", favArray[i].title);
+            animalImage.attr("src", favArray[i].images.fixed_height_small_still.url);
+            animalImage.attr("data-still", favArray[i].images.fixed_height_small_still.url);
+            animalImage.attr("data-move", favArray[i].images.fixed_height_small.url);
+            animalImage.attr("data-state", "still");
+            animalImage.attr("class", "gif");
+
+            $(infoDiv).append(favStatement);
+            $(infoDiv).append(rating);
+            $(picDiv).append(animalImage);
+            $(picDiv).append(infoDiv);
+
+            // appending newly made div to the Html page, and going to next one.
+            $("#pics_here").append(picDiv);
+
+        }
+        $(".gif").on("click", function () {
+            // switches state of still or moving gif
+            var state = $(this).attr("data-state");
+            console.log(this);
+            if (state === "still") {
+                $(this).attr("src", $(this).attr("data-move"))
+                $(this).attr("data-state", "moving")
+            } else if (state === "moving") {
+                $(this).attr("src", $(this).attr("data-still"))
+                $(this).attr("data-state", "still")
+            }
+
+        });
+    })
+});
+
+$("#favClear").on("click", function () {
+    favArray = [""];
+    localStorage.clear("favoriteHeros");
+});
+
