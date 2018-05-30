@@ -1,8 +1,8 @@
 var api_key = "xVCRIEMVtbSqDKSYUxx4bcB8UetYmDx2";
 // have several buttons ready to go, and a dropdown for total pictures wanted 
 var gifArray = ["Superman", "Batman", "Dr Strange", "Aquaman", "Mr Incredible", "Captain America",
-    "Spiderman", "Avengers", "Antman", "Wonderwoman", "Batgirl", "Justice League", "Marvel",
-    "DC comics", "X-men", "wolverine", "Ironman", "Hulk", "Thor"];
+    "Spiderman", "Howard Duck", "Avengers", "Antman", "Toxic Avenger", "Rocket Racoon", "Wonderwoman", "Deadpool", "Batgirl", "Justice League", "Marvel",
+    "DC comics", "Frozone", "Hellboy", "X-men", "DuffMan", "wolverine", "Ironman", "Hulk", "Thor", "Groot"];
 // other global variables:
 var numberOfImages = 12;
 var favArray = [localStorage.getItem("favoriteHeros")];
@@ -35,9 +35,9 @@ function buttonDisplay() {
                 var animalImage = $("<img class ='gif'>");
                 var favButton = $("<button type ='button' class = 'favButton btn btn-success btn-sm'>Add to Favorites</button>")
                 animalImage.attr("alt", results[i].title);
-                animalImage.attr("src", results[i].images.fixed_height_small_still.url);
-                animalImage.attr("data-still", results[i].images.fixed_height_small_still.url);
-                animalImage.attr("data-move", results[i].images.fixed_height_small.url);
+                animalImage.attr("src", results[i].images.fixed_width_still.url);
+                animalImage.attr("data-still", results[i].images.fixed_width_still.url);
+                animalImage.attr("data-move", results[i].images.fixed_width.url);
                 animalImage.attr("data-state", "still");
                 animalImage.attr("class", "gif");
                 favButton.val(i);
@@ -107,9 +107,9 @@ $(document).ready(function () {
             var animalImage = $("<img class ='gif'>");
             var favStatement = $("<p>Favorite</p>")
             animalImage.attr("alt", favArray[i].title);
-            animalImage.attr("src", favArray[i].images.fixed_height_small_still.url);
-            animalImage.attr("data-still", favArray[i].images.fixed_height_small_still.url);
-            animalImage.attr("data-move", favArray[i].images.fixed_height_small.url);
+            animalImage.attr("src", favArray[i].images.fixed_width_still.url);
+            animalImage.attr("data-still", favArray[i].images.fixed_width_still.url);
+            animalImage.attr("data-move", favArray[i].images.fixed_width.url);
             animalImage.attr("data-state", "still");
             animalImage.attr("class", "gif");
 
