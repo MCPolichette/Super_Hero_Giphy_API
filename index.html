@@ -9,6 +9,9 @@
     <link rel="stylesheet" type="text/css" media="screen" href="reset.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
         crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="images/favIcon.PNG" sizes="16x16" type="image/png">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Acme|Faster+One|Permanent+Marker" rel="stylesheet">
@@ -19,7 +22,10 @@
     <!-- title -->
     <div class="jumbotron text-center">
         <h1>Super Hero Gifs</h1>
-        <p>Click the buttons to see your favorite superhero, or add a new one by searching below.</p>
+        <p id="directions">Click the buttons to see your favorite superhero, or add a new one by searching below.</p>
+        <a href="https://giphy.com/">
+            <img src="images/PoweredBy_200_Horizontal_Light-Backgrounds_With_Logo.gif" , alt="PoweredByGiphy" , id="giphyLogo">
+        </a>
     </div>
     <div class="container">
         <div class="row">
@@ -47,6 +53,27 @@
         <!-- content div  ideally a way to stack the images cleanly, and neat -->
     </div>
     <!-- direct footer. -->
+
+    <footer class="pagebottom">
+
+        <div class="bottom-center">
+            <a href="http://MCPolichette.github.io">
+                <div class="bottom-name">Mark Polichette</div>
+            </a>
+            <div class="bottom-nav">
+
+                <a href="http://MCPolichette.github.io">
+                    <i id="social-git" class="fa fa-github-square fa-3x social"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/mark-polichette/">
+                    <i id="social-linked" class="fa fa-linkedin-square fa-3x social"></i>
+                </a>
+                <a href="mailto:Mark@Polichette.com">
+                    <i id="social-email" class="fa fa-envelope-square fa-3x social"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
 
 
     <script src="app.js"></script>

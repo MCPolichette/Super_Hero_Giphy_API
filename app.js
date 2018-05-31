@@ -2,7 +2,7 @@ var api_key = "xVCRIEMVtbSqDKSYUxx4bcB8UetYmDx2";
 // have several buttons ready to go, and a dropdown for total pictures wanted 
 var gifArray = ["Superman", "Batman", "Dr Strange", "Aquaman", "Mr Incredible", "Captain America",
     "Spiderman", "Howard Duck", "Avengers", "Antman", "Toxic Avenger", "Rocket Racoon", "Wonderwoman", "Deadpool", "Batgirl", "Justice League", "Marvel",
-    "DC comics", "Frozone", "Hellboy", "X-men", "DuffMan", "wolverine", "Ironman", "Hulk", "Thor", "Groot"];
+    "DC comics", "Frozone", "Captain Planet", "Hellboy", "X-men", "DuffMan", "wolverine", "Ironman", "Hulk", "Thor", "Groot"];
 // other global variables:
 var numberOfImages = 12;
 var favArray = [localStorage.getItem("favoriteHeros")];
