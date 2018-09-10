@@ -32,18 +32,18 @@ function buttonDisplay() {
                 var picDiv = $("<div class = ' pic_view'>");
                 var infoDiv = $("<div class = 'info'>")
                 var rating = $("<p class = 'rating'> Rating: " + results[i].rating + "</p>");
-                var animalImage = $("<img class ='gif'>");
+                var superHeroImage = $("<img class ='gif'>");
                 var favButton = $("<button type ='button' class = 'favButton btn btn-success btn-sm'>Add to Favorites</button>")
-                animalImage.attr("alt", results[i].title);
-                animalImage.attr("src", results[i].images.fixed_width_still.url);
-                animalImage.attr("data-still", results[i].images.fixed_width_still.url);
-                animalImage.attr("data-move", results[i].images.fixed_width.url);
-                animalImage.attr("data-state", "still");
-                animalImage.attr("class", "gif");
+                superHeroImage.attr("alt", results[i].title);
+                superHeroImage.attr("src", results[i].images.fixed_width_still.url);
+                superHeroImage.attr("data-still", results[i].images.fixed_width_still.url);
+                superHeroImage.attr("data-move", results[i].images.fixed_width.url);
+                superHeroImage.attr("data-state", "still");
+                superHeroImage.attr("class", "gif");
                 favButton.val(i);
                 $(infoDiv).append(favButton);
                 $(infoDiv).append(rating);
-                $(picDiv).append(animalImage);
+                $(picDiv).append(superHeroImage);
                 $(picDiv).append(infoDiv);
 
                 // appending newly made div to the Html page, and going to next one.
@@ -104,18 +104,18 @@ $(document).ready(function () {
             var picDiv = $("<div class = ' pic_view'>");
             var infoDiv = $("<div class = 'info'>")
             var rating = $("<p class = 'rating'> Rating: " + favArray[i].rating + "</p>");
-            var animalImage = $("<img class ='gif'>");
+            var superHeroImage = $("<img class ='gif'>");
             var favStatement = $("<p>Favorite</p>")
-            animalImage.attr("alt", favArray[i].title);
-            animalImage.attr("src", favArray[i].images.fixed_width_still.url);
-            animalImage.attr("data-still", favArray[i].images.fixed_width_still.url);
-            animalImage.attr("data-move", favArray[i].images.fixed_width.url);
-            animalImage.attr("data-state", "still");
-            animalImage.attr("class", "gif");
+            superHeroImage.attr("alt", favArray[i].title);
+            superHeroImage.attr("src", favArray[i].images.fixed_width_still.url);
+            superHeroImage.attr("data-still", favArray[i].images.fixed_width_still.url);
+            superHeroImage.attr("data-move", favArray[i].images.fixed_width.url);
+            superHeroImage.attr("data-state", "still");
+            superHeroImage.attr("class", "gif");
 
             $(infoDiv).append(favStatement);
             $(infoDiv).append(rating);
-            $(picDiv).append(animalImage);
+            $(picDiv).append(superHeroImage);
             $(picDiv).append(infoDiv);
 
             // appending newly made div to the Html page, and going to next one.
